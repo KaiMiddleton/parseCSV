@@ -32,6 +32,7 @@ Behaviour
   
 Usage
 ------------------------------------------------------------------------
+####Parse String
 
     <?php
       include_once('function.parsecsv.php');
@@ -40,7 +41,7 @@ Usage
       $dataArray = parseCSV($csvdata);
       print_r($dataArray);
 
-easiest way if you want to read a whole CSV file
+####Parse File (whole)
     
     <?php
       include_once('function.parsecsv.php');
@@ -49,7 +50,7 @@ easiest way if you want to read a whole CSV file
       $dataArray = parseCSV($csvdata);
       print_r($dataArray);
       
-if you want to read line by line
+####Parse File (line-by-line)
 
     <?php
       include_once('function.parsecsv.php');
