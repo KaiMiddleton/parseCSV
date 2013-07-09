@@ -111,7 +111,7 @@ standard enclosed and unenclosed CSV data with quotes in data
 parses to  
 
     array(
-      [0] => array('Joe said: "I like Trains", before he went home','orange','banana'),
+      [0] => array('Joe said: "I like Trains"', before he went home','orange','banana'),
       [1] => array('I like apple, mice and tables','horse','mouse')
     )
   
