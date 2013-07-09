@@ -11,7 +11,7 @@ Jump to:
 
 Features:
 ------------------------------------------------------------------------
-- light and simple  (aprox 44 lines of relevant code)
+- light and simple  (approx. 44 lines of relevant code)
 - full multibyte support, no fear of special chars
 - freely choosable field delimiter, record delimiter and enclosure strings
   I say strings because you can have delimiters and enclosures with multiple chars if you like
@@ -41,6 +41,16 @@ Usage
                  'tiger,horse,mouse';
       $dataArray = parseCSV($csvdata);
       print_r($dataArray);
+      
+####Parse String with own delimiters and enclosure
+semicolon(`;`) as field delimiter, single quotes(`'`) as enclosure and hash(`#`) as line delimiter
+
+    <?php
+      include_once('function.parsecsv.php');
+      $csvdata = "apple;'orange';'banana'#".
+                 "tiger;'horse;hair';mouse";
+      $dataArray = parseCSV($csvdata,';',"'",'#');
+      print_r($dataArray);
 
 ####Parse File (whole)
     
@@ -57,7 +67,6 @@ Usage
       include_once('function.parsecsv.php');
       $file = 'myEpicData.csv';
       $dataArray = array();
-      
       $file = fopen($file, "r") or exit('Unable to open file!');
       while(!feof($file)){
         $dataArray = parseCSV(fgets($file));
