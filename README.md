@@ -43,13 +43,13 @@ Usage
       print_r($dataArray);
       
 ####Parse String with own delimiters and enclosure
-semicolon(`;`) as field delimiter, single quotes(`'`) as enclosure and hash(`#`) as line delimiter
+the letters `frog` as field delimiter, single quotes(`'`) as enclosure and hash(`#`) as line delimiter
 
     <?php
       include_once('function.parsecsv.php');
-      $csvdata = "apple;'orange';'banana'#".
-                 "tiger;'horse;hair';mouse";
-      $dataArray = parseCSV($csvdata,';',"'",'#');
+      $csvdata = "applefrog'orange'frog'banana'#".
+                 "tigerfrog'horsefroghair'frogmouse";
+      $dataArray = parseCSV($csvdata,'frog',"'",'#');
       print_r($dataArray);
 
 ####Parse File (whole)
