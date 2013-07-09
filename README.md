@@ -30,6 +30,8 @@ Behaviour
   `array( [0] => array('Kai said "I like Trains", when he came home'))`  
   This may seem strange, but that is what is defined by the [RFC4180](http://tools.ietf.org/html/rfc4180) standard
   and most widely supported.
+- field delimiter, enclosure and the rekord delimiter can all de userdefined
+  and can all be any string you like, meaning you are NOT limited to one character
   
 Usage
 ------------------------------------------------------------------------
