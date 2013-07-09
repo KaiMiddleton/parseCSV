@@ -7,6 +7,7 @@ Jump to:
 [Behaviour](#behaviour)  
 [Usage](#usage)  
 [Examples](#examples)  
+[Requirements](#requirements)
 
 Features:
 ------------------------------------------------------------------------
@@ -57,7 +58,7 @@ Usage
       $file = 'myEpicData.csv';
       $dataArray = array();
       
-      $file = fopen($file, "r") or exit("Unable to open file!");
+      $file = fopen($file, "r") or exit('Unable to open file!');
       while(!feof($file)){
         $dataArray = parseCSV(fgets($file));
       }
@@ -141,3 +142,17 @@ parses to
       [0] => array('apple','orange','banana'),
       [1] => array('tiger','horse,mouse')
     )
+
+Requirements:
+------------------------------------------------------------------------
+####PHP-Version
+You need at least **PHP Version 4.2.0** or higher.
+
+####PHP functions used
+- `implode()` - PHP4, PHP5
+- `mb_split()` - PHP4 >= 4.2.0, PHP5
+- `mb_strlen()` - PHP4 >= 4.0.6, PHP5
+- `mb_strpos()` - PHP4 >= 4.0.6, PHP5
+- `mb_substr()` - PHP4 >= 4.0.6, PHP5
+- `min()` - PHP4, PHP5
+- `preg_quote()` - PHP4, PHP5
