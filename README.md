@@ -3,10 +3,10 @@ parseCSV
 
 A function that parses CSV Information. Written in PHP.  
 Jump to:  
-[Features]:(#deatures)  
-[Behaviour]:(#behaviour)  
-[Usage]:(#usage)  
-[Examples]:(#examples)  
+[Features](#features)  
+[Behaviour](#behaviour)  
+[Usage](#usage)  
+[Examples](#examples)  
 
 Features:
 ------------------------------------------------------------------------
@@ -26,7 +26,42 @@ Behaviour
   simply repeat it twice to escape it: (example with double quote as enclosure string)  
   `"Kai said ""I like Trains"", when he came home"`  
   parses to  
-  `array( [0] => array('Kai said "I like Trains", when he came home'))`
+  `array( [0] => array('Kai said "I like Trains", when he came home'))`  
+  This may seem strange, but that is what is defined by the [RFC4180](http://tools.ietf.org/html/rfc4180) standard
+  and most widely supported.
+  
+Usage
+------------------------------------------------------------------------
+
+    <?php
+      include_once('function.parsecsv.php');
+      $csvdata = 'apple,orange,banana'."\n".
+                 'tiger,horse,mouse';
+      $dataArray = parseCSV($csvdata);
+      print_r($dataArray);
+
+easiest way if you want to read a whole CSV file
+    
+    <?php
+      include_once('function.parsecsv.php');
+      $file = 'myEpicData.csv';
+      $csvdata = file_get_contents($file)
+      $dataArray = parseCSV($csvdata);
+      print_r($dataArray);
+      
+if you want to read line by line
+
+    <?php
+      include_once('function.parsecsv.php');
+      $file = 'myEpicData.csv';
+      $csvdata = file_get_contents($filename)
+      $dataArray = array();
+      
+      $file = fopen($file, "r") or exit("Unable to open file!");
+      while(!feof($file)){
+        $dataArray = parseCSV(fgets($file));
+      }
+      fclose($file);
 
 Examples:
 ------------------------------------------------------------------------
