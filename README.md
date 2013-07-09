@@ -68,9 +68,9 @@ Examples:
 ------------------------------------------------------------------------
 Note: all these examples use the default delimiters and enclosure strings
 which are:  
-Field delimiter: ','  - a comma
-Record delimiter: "\n" - a new line
-Enclosure string: '"' - a double quote
+Field delimiter: ','  - a comma  
+Record delimiter: "\n" - a new line  
+Enclosure string: '"' - a double quote  
 
 
 ####Example 1
