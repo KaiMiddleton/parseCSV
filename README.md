@@ -55,7 +55,6 @@ Usage
     <?php
       include_once('function.parsecsv.php');
       $file = 'myEpicData.csv';
-      $csvdata = file_get_contents($filename)
       $dataArray = array();
       
       $file = fopen($file, "r") or exit("Unable to open file!");
