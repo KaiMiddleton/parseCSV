@@ -18,7 +18,9 @@ Features:
   
 Examples:
 ------------------------------------------------------------------------
-Example 1 - standard unenclosed CSV data
+####Example 1
+
+standard unenclosed CSV data
 
     apple,orange,banana
     tiger,horse,mouse
@@ -30,3 +32,58 @@ parses to
       [1] => array('tiger','horse','mouse')
     )
 
+####Example 2
+
+standard enclosed and unenclosed CSV data
+
+    "I like people, trains and fish",orange,"banana"
+    "I like apple, mice and tables","horse",mouse
+
+parses to  
+
+    array(
+      [0] => array('I like people, trains and fish','orange','banana'),
+      [1] => array('I like apple, mice and tables','horse','mouse')
+    )
+
+####Example 3
+
+standard enclosed and unenclosed CSV data with quotes in data
+
+    "Joe said: ""I like Trains"", before he went home",orange,"banana"
+    "I like apple, mice and tables","horse",mouse
+
+parses to  
+
+    array(
+      [0] => array('Joe said: "I like Trains", before he went home','orange','banana'),
+      [1] => array('I like apple, mice and tables','horse','mouse')
+    )
+  
+####Example 4
+
+quirky CSV data with mixed unenclosed and enclosed parts in one field
+
+    apple,or"an"ge,ban"ana"
+    tiger,h"ors"e,mouse
+    
+parses to  
+
+    array(
+      [0] => array('apple','orange','banana'),
+      [1] => array('tiger','horse','mouse')
+    )
+
+####Example 5
+
+quirky CSV data with missing ending enclosure
+
+    "apple","orange","banana"
+    "tiger","horse,mouse
+
+parses to  
+
+    array(
+      [0] => array('apple','orange','banana'),
+      [1] => array('tiger','horse,mouse')
+    )
