@@ -1,6 +1,6 @@
 <?php
   /* Author: Kai Middleton <kai@middleton.de>
-   * Name: function.pasrsecsv.php
+   * Name: parsecsv
    * Version: 1.0
    * USAGE:
    *   $csvdata = 'Happy,"Kai says,""Fluff is great""",Joe"';
